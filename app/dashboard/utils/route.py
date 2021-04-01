@@ -53,26 +53,6 @@ def init():
         view_func=vgeneric.AboutView.as_view("about"),
         methods=["GET"]
     )
-    add_rule(
-        "/faq/",
-        view_func=vgeneric.FaqView.as_view("faq"),
-        methods=["GET"]
-    )
-    add_rule(
-        "/contact/",
-        view_func=vgeneric.ContactView.as_view("contact"),
-        methods=["GET"]
-    )
-    add_rule(
-        "/stats/",
-        view_func=vgeneric.StatisticsView.as_view("stats"),
-        methods=["GET"]
-    )
-    add_rule(
-        "/sponsors/",
-        view_func=vgeneric.SponsorsView.as_view("sponsors"),
-        methods=["GET"]
-    )
 
     # Builds related URLs.
     add_rule(

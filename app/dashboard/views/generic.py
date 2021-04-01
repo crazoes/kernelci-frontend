@@ -26,37 +26,8 @@ class GenericView(View):
 
     PAGE_TITLE = app.config.get("DEFAULT_PAGE_TITLE")
 
-
-class FaqView(GenericView):
-
-    def dispatch_request(self, *args, **kwargs):
-        FAQ_TITLE = "%s &mdash; %s" % (self.PAGE_TITLE, "FAQ")
-        return render_template("faq.html", page_title=FAQ_TITLE)
-
-
-class ContactView(GenericView):
-
-    def dispatch_request(self, *args, **kwargs):
-        CONTACT_TITLE = "%s &mdash; %s" % (self.PAGE_TITLE, "Contact us")
-        return render_template("contact.html", page_title=CONTACT_TITLE)
-
-
 class AboutView(GenericView):
 
     def dispatch_request(self):
         ABOUT_TITLE = "%s &mdash; %s" % (self.PAGE_TITLE, "Info")
         return render_template("info.html", page_title=ABOUT_TITLE)
-
-
-class StatisticsView(GenericView):
-
-    def dispatch_request(self):
-        page_title = "%s &mdash; %s" % (self.PAGE_TITLE, "Statistics")
-        return render_template("stats.html", page_title=page_title)
-
-
-class SponsorsView(GenericView):
-    def dispatch_request(self):
-        page_title = "%s &mdash; %s" % (
-            self.PAGE_TITLE, "Sponsors &amp; Contributors")
-        return render_template("sponsors.html", page_title=page_title)
